@@ -35,8 +35,8 @@ public class MatchAdapter extends BaseAdapter implements AbsListView.OnScrollLis
     public static String[] URLS1;
     public static String[] URLS2;
     private boolean mFirstIn;
-    private  int irows = 0;
-    private  int  mImghashMap = 0;
+    private  int irows = 0;//记录img的key
+    private  int  mImghashMap = 0;//装img数据源
     public MatchAdapter(Context context, List<Match> matches, ListView listView) {
         int irows = 0;
         mImghashMap = 0;
@@ -105,7 +105,7 @@ public class MatchAdapter extends BaseAdapter implements AbsListView.OnScrollLis
        // mImageLoader.showImageByAsyncTask(viewHolder.macth_Name1con,matchList.get(position).getName1con());
         //mImageLoader.showImageByAsyncTask(viewHolder.macth_Name2con,matchList.get(position).getName2con());
 
-
+		//下载img，记录需要绑定的viewholder
         HttpURLConnectionImg(matchList.get(position).getName2con(),handler1,viewHolder);
 
         convertView.setTag(viewHolder);
@@ -113,7 +113,7 @@ public class MatchAdapter extends BaseAdapter implements AbsListView.OnScrollLis
     }
 
 
-
+	//回调函数，下载完img后，需要重新绑定。
     private Handler handler1=new Handler(){
         public void handleMessage(Message msg){
 //            Bitmap bitmap = (Bitmap) msg.obj;
