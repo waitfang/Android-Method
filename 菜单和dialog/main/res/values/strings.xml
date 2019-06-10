@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">DemoAndroidGame</string>
+
+
+    <string name="butMenu">弹出菜单</string>
+    <string name="butActivity">弹出新的布局</string>
+    <string name="DialogButtton">新的布局</string>
+    <string name="menuItemexit">退出</string>
+    <string name="menuItemset">设置</string>
+    <string name="menuItemaccount">账号</string>
+</resources>
